@@ -23,6 +23,11 @@
     "!**/node_modules/**/*.ts"
   ],
   "files": [
+    "app/EiApp/client/routes.ts",
+    "app/EiApp/institutions/institutions_collection.ts",
+    "app/EiApp/institutions/server/institutions_methods.ts",
+    "app/EiApp/institutions/server/institutions_publications.ts",
+    "app/EiApp/server/index.ts",
     "app/TodoApp/client/routes.ts",
     "app/TodoApp/collections/Tasks.ts",
     "app/TodoApp/server/todo-subscriptions.ts",
@@ -31,7 +36,11 @@
     "app/typings/packages.d.ts",
     "app/typings/react-dom/react-dom.d.ts",
     "app/typings/react/react.d.ts",
+    "app/EiApp/client/layout.tsx",
+    "app/EiApp/institutions/institutions_view.tsx",
     "app/main/client/routes.tsx",
+    "app/shared/client/components/loading.tsx",
+    "app/shared/i18n.tsx",
     "app/TodoApp/client/components/TodoHeader.tsx",
     "app/TodoApp/client/components/TodoItem.tsx",
     "app/TodoApp/client/components/TodoList.tsx",
