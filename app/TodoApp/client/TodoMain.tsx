@@ -1,15 +1,19 @@
-import { Component } from 'react';
-import { Link } from 'react-router';
+import React from 'react';
 import ReactMixin from 'react-mixin';
 import ReactMeteorData from 'react-meteor-data';
 
 import TodoHeader from './components/TodoHeader';
 import TodoList from './components/TodoList';
 
-import Tasks from 'TodoApp/collections/Tasks';
+import Tasks from '../collections/Tasks';
+ 
+interface State {
+  hideCompleted: boolean;
+}
 
 @ReactMixin.decorate(ReactMeteorData)
-export default class TodoMain extends Component {
+export default class TodoMain extends React.Component<{}, State> {
+  data: any;
 
   state = {
     hideCompleted: false
@@ -18,7 +22,9 @@ export default class TodoMain extends Component {
   getMeteorData() {
     Meteor.subscribe('tasks');
 
-    let taskFilter = {};
+    let taskFilter = {
+      checked: {}
+    };
 
     if (this.state.hideCompleted) {
       taskFilter.checked = {$ne: true};
@@ -34,7 +40,7 @@ export default class TodoMain extends Component {
     };
   }
 
-  handleToggleHideCompleted = (e) => {
+  handleToggleHideCompleted = (e: any) => {
     this.setState({ hideCompleted: e.target.checked });
   }
 
@@ -46,7 +52,6 @@ export default class TodoMain extends Component {
 
     return (
         <div className="container">
-          <Link to="/admin">Admin</Link>
           <TodoHeader
               incompleteCount={this.data.incompleteCount}
               hideCompleted={this.state.hideCompleted}

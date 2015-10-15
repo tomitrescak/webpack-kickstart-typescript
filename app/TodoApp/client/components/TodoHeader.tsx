@@ -1,16 +1,23 @@
-import { Component, PropTypes } from 'react';
-import BlazeToReact from 'blaze-to-react';
+import React from "react";
+import BlazeToReact from "blaze-to-react";
+//import '/client/img/check.png';
 
-const LoginButtons = BlazeToReact('loginButtons');
+const LoginButtons = BlazeToReact("loginButtons");
 
-export default class TodoHeader extends Component {
-  static propTypes = {
-    hideCompleted: PropTypes.bool,
-    toggleHideCompleted: PropTypes.func.isRequired,
-    incompleteCount: PropTypes.number.isRequired
-  }
+interface Props {
+  hideCompleted: boolean;
+  toggleHideCompleted: any;
+  incompleteCount: Function;
+}
 
-  handleSubmit(event) {
+export default class TodoHeader extends React.Component<Props, {}> {
+  // static propTypes = {
+  //   hideCompleted: PropTypes.bool,
+  //   toggleHideCompleted: PropTypes.func.isRequired,
+  //   incompleteCount: PropTypes.number.isRequired
+  // }
+
+  handleSubmit(event: any) {
     // Prevent default browser form submit
     event.preventDefault();
 
@@ -18,14 +25,14 @@ export default class TodoHeader extends Component {
     var text = event.target.text.value;
 
     // Insert a task into the collection
-    Meteor.call('addTask', text);
+    Meteor.call("addTask", text);
 
     // Clear form
-    event.target.text.value = '';
+    event.target.text.value = "";
   }
 
   render() {
-    let form = null;
+    let form: any = null;
 
     if (Meteor.userId()) {
       form = (
@@ -38,7 +45,7 @@ export default class TodoHeader extends Component {
     return (
       <header>
         <h1>
-          <img src={require('../img/check.png')} alt="" />
+
           Todo List ({this.props.incompleteCount})
         </h1>
 

@@ -19,10 +19,10 @@ webpack:webpack
 meteorhacks:npm
 react-runtime
 react-meteor-data
-reactrouter:react-router-ssr
 thereactivestack:blazetoreact
 accounts-ui
 accounts-password
 
 
 npm-container
+reactrouter:react-router

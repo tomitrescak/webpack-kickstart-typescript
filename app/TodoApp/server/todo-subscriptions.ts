@@ -1,4 +1,4 @@
-import Tasks from 'TodoApp/collections/Tasks';
+import Tasks from '../collections/Tasks';
 
 // This code only runs on the server
 Meteor.publish('tasks', function () {
@@ -8,4 +8,8 @@ Meteor.publish('tasks', function () {
       { owner: this.userId }
     ]
   });
+});
+
+Meteor.publish('alltasks', function () {
+  return Tasks.find();
 });

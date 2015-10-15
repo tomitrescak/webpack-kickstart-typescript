@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
+  devtool: 'eval', // eval, source-map, eval-source-map
   externals: {
     // Add global variables you would like to import
     'react': 'React',
@@ -15,6 +16,6 @@ module.exports = {
   },
   resolve: {
     root: __dirname + '/..',
-    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss']
+    extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss']
   }
 };

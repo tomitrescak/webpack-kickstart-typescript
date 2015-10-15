@@ -31,6 +31,7 @@ module.exports = {
   plugins: plugins,
   module: {
     loaders: [
+      { test: /\.tsx?$/, loader: 'babel?' + JSON.stringify(babelSettings) + '!awesome-typescript', exclude: /node_modules|lib/ },
       { test: /\.jsx?$/, loader: 'babel', query: babelSettings, exclude: /node_modules/ },
       { test: /\.css$/, loader: 'style!css' },
       { test: /\.scss$/, loader: 'style!css!sass' },

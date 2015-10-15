@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ES6",
+    "jsx": "react",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "experimentalAsyncFunctions": true,
+    "noImplicitAny": true,
+    "noEmit": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "doTypeCheck": true,
+    "useBabel": false,
+    "emitRequireType": true,
+    "forkChecker": true
+  },
+  "filesGlob": [
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "!**/meteor_core/**/*.*",
+    "!**/node_modules/**/*.ts"
+  ],
+  "files": [
+    "app/TodoApp/client/routes.ts",
+    "app/TodoApp/collections/Tasks.ts",
+    "app/TodoApp/server/todo-subscriptions.ts",
+    "app/TodoApp/todo-methods.ts",
+    "app/typings/meteor/meteor.d.ts",
+    "app/typings/packages.d.ts",
+    "app/typings/react-dom/react-dom.d.ts",
+    "app/typings/react/react.d.ts",
+    "app/main/client/routes.tsx",
+    "app/TodoApp/client/components/TodoHeader.tsx",
+    "app/TodoApp/client/components/TodoItem.tsx",
+    "app/TodoApp/client/components/TodoList.tsx",
+    "app/TodoApp/client/TodoApp.tsx",
+    "app/TodoApp/client/TodoMain.tsx"
+  ],
+  "exclude": []
+}
